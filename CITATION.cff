@@ -1,7 +1,6 @@
 cff-version: 1.2.0
 title: >-
-  Crank-Nicolson Cyclic Voltammetry Simulation with
-  Integrated b-Value Analysis
+  Numerical Cyclic Voltammetry Simulation from 1D Diffusion
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
