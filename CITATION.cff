@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: >-
+  Crank-Nicolson Cyclic Voltammetry Simulation with
+  Integrated b-Value Analysis
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Matthew
+    family-names: Chagnot
+    email: mschagno@ncsu.edu
+    affiliation: North Carolina State University
+    orcid: 'https://orcid.org/0009-0003-3875-1141'
+keywords:
+  - Cyclic Voltammetry
+  - Matlab
+  - Electrochemistry
