@@ -85,7 +85,7 @@ oxcounter = 0;
 
 %this section is basically a grouping of different variables that are
 %established before the main for-loop
-iguess = iguessinit; %initializing the guess for the first timestep
+iguess = 0; %initializing the guess for the first timestep
 ioutlist = double.empty(nsteps,0); %this list holds the current values for each Eout
 EEffList = double.empty(nsteps,0); 
 EAppOutList = double.empty(nsteps,0);
@@ -111,7 +111,7 @@ if m >= 3
     iguess = (ioutlist(m-1)+(ioutlist(m-1)-ioutlist(m-2)));
 end
 
-[EEffEst,iout,u_new,y,EAppOut,iguessout] = crank_nicolson(cathodic_sweep,m,Estart,nu,dt,iguess,R,CStar,f,Eo,alpha,u_old,nx,A,dx,F,Area,D,ierrorlist,mto);
+[EEffEst,iout,u_new,y,EAppOut,iguessout] = crank_nicolson(cathodic_sweep,m,Estart,nu,dt,iguess,R,CStar,f,Eo,alpha,u_old,nx,A,dx,F,Area,D,mto);
 
 u_old = u_new;
 iguess = iout;
@@ -232,7 +232,7 @@ end
 %diffusion equation. This function outputs our "effective" potential,
 %output current, new concentration gradient, and the difference between the
 %input and output currents
-function [EEffEst,iout,u_new,y,EAppOut,iguessout] = crank_nicolson(cathodic_sweep,m,Estart,nu,dt,iguess,R,CStar,f,Eo,alpha,u_old,nx,A,dx,F,Area,D,ierrorlist,mto)
+function [EEffEst,iout,u_new,y,EAppOut,iguessout] = crank_nicolson(cathodic_sweep,m,Estart,nu,dt,iguess,R,CStar,f,Eo,alpha,u_old,nx,A,dx,F,Area,D,mto)
       if cathodic_sweep == 1
         EEffEst = Estart + nu*(dt*m) + iguess*R; %Initializing potential "guess"
         EAppOut = Estart + nu*(dt*m);
